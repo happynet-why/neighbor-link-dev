@@ -216,7 +216,9 @@ uci add_list uhttpd.portal.setenv='Cache-Control=no-store, no-cache, must-revali
 uci add_list uhttpd.portal.setenv='Pragma=no-cache'
 uci add_list uhttpd.portal.setenv='Expires=-1'
 
-sed -i 's|cgi-bin/luci|nlink-dashboard|g' /www/index.html
+# TODO : Fix the redundancy issue
+# sed -i 's|cgi-bin/luci|nlink-dashboard|g' /www/index.html
+cp /www/nlink-dashboard/index.html /www/index.html
 
 #--------------------------------------
 

@@ -4,7 +4,7 @@
 deviceModel=$(cat /proc/device-tree/model)
 deviceModel=$(echo "$deviceModel" | awk '{print tolower($0)}' | tr ' ' '_')
 
-url="https://github.com/nasnet-community/neighbor-link/blob/0f2001dd371d02357248beb61ec9a812d82a743a/builds/version-$deviceModel.txt"
+url=""https://s3-firmware-releases.s3.us-west-1.amazonaws.com/version-$deviceModel.txt""
 
 if [ "$1" == "Check" ];then
 
@@ -59,6 +59,7 @@ elif [ "$1" == "Do" ];then
     fi
 
 elif [ "$1" == "Upgrade" ];then
+
     sysupgrade  -n /tmp/firmware.bin
 
 else
